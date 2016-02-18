@@ -2,7 +2,7 @@ function Thermostat() {
   this.temperature = 20;
   MIN_TEMP         = 10;
   this.POWER_SAVING     = true;
-  this.COLOUR = 'Green';
+  this.COLOUR = 'Yellow';
 }
 
 Thermostat.prototype.upButton = function() {
@@ -17,6 +17,7 @@ Thermostat.prototype.upButton = function() {
 Thermostat.prototype.downButton = function() {
   if (this.temperature <= MIN_TEMP) throw ('Min Temp reached');
   this.temperature -= 1;
+  this.colour();
 };
 
 Thermostat.prototype.powerSavingButton = function() {
@@ -31,13 +32,14 @@ Thermostat.prototype.powerSavingButton = function() {
 
 Thermostat.prototype.tempReset = function() {
   this.temperature = 20;
+  this.colour();
 };
 
 Thermostat.prototype.colour = function () {
   if (this.temperature < 18) {
     this.COLOUR = 'Green';
   }
-  else if (this.temperature < 25 && this.temperature > 18) {
+  else if (this.temperature <= 25 && this.temperature >= 18) {
     this.COLOUR = 'Yellow';
   }
   else {
