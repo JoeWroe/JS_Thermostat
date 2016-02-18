@@ -8,7 +8,7 @@ describe('Thermostat', function() {
       expect(thermostat.temperature).toEqual(20);
     });
 
-    it('Can increase temperature with upbutton', function() {
+    it('Can increase with up button', function() {
       thermostat.upButton();
       expect(thermostat.temperature).toEqual(21);
     });
@@ -19,7 +19,7 @@ describe('Thermostat', function() {
       expect(thermostat.temperature).toEqual(19);
     });
 
-    it('can\'t go below minimum temp', function() {
+    it('can\'t go below minimum', function() {
       thermostat.temperature = MIN_TEMP;
       expect(function() {thermostat.downButton();}).toThrow('Min Temp reached');
     });
@@ -43,7 +43,7 @@ describe('Thermostat', function() {
       expect(function() {thermostat.upButton();}).toThrow('Max Temp reached');
     });
 
-    it('Max temp is 25 when on', function() {
+    it('Max temp is 32 when off', function() {
       thermostat.temperature = 32;
       thermostat.powerSavingButton();
       expect(function() {thermostat.upButton();}).toThrow('Max Temp reached');
@@ -56,13 +56,13 @@ describe('Thermostat', function() {
       expect(thermostat.COLOUR).toBe('Green');
     });
 
-    it('is green when below 18', function () {
+    it('is yellow when between 18 & 25', function () {
       thermostat.temperature = 22;
       thermostat.upButton();
       expect(thermostat.COLOUR).toBe('Yellow');
     });
 
-    it('is green when below 18', function () {
+    it('is red when over 25', function () {
       thermostat.temperature = 29;
       thermostat.upButton();
       expect(thermostat.COLOUR).toBe('Red');
