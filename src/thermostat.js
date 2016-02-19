@@ -1,14 +1,14 @@
 function Thermostat() {
   this.temperature = 20;
   MIN_TEMP         = 10;
-  this.POWER_SAVING     = true;
+  this.POWER_SAVING     = "on";
   this.COLOUR = 'Yellow';
 }
 
 Thermostat.prototype.upButton = function() {
-  if (this.POWER_SAVING === false && this.temperature >= 32)
+  if (this.POWER_SAVING === "off" && this.temperature >= 32)
    throw ('Max Temp reached');
-  if (this.POWER_SAVING === true && this.temperature >= 25)
+  if (this.POWER_SAVING === "on" && this.temperature >= 25)
    throw ('Max Temp reached');
   this.temperature += 1;
   this.colour();
@@ -21,11 +21,11 @@ Thermostat.prototype.downButton = function() {
 };
 
 Thermostat.prototype.powerSavingButton = function() {
-  if (this.POWER_SAVING === true) {
-    this.POWER_SAVING = false;
+  if (this.POWER_SAVING === "on") {
+    this.POWER_SAVING = "off";
   }
   else {
-    this.POWER_SAVING = true;
+    this.POWER_SAVING = "on";
     this.temperature = 25;
   }
 };

@@ -1,0 +1,54 @@
+body {
+  background: #eee;
+  color: #222;
+  width: 100%;
+  margin: 0 0 0 0;
+}
+
+#powerSavingMode {
+  background: #333;
+  color: #fff;
+  width: 100%;
+  margin: 0 0 0 0;
+  padding: 7px;
+}
+
+#powerSavingMode p {
+  font-size: 22px;
+  font-family: "Ubuntu";
+  padding: 0 0 0 10px;
+  margin: 0 0 0 0;
+}
+
+#controllerBar {
+  background: #fff;
+  color: #111;
+  padding: 3em;
+  width: 100%;
+  display: block;
+  margin: 0 0 0 0;
+}
+
+#controllerBar li {
+  display: inline;
+}
+
+#controllerBar ul {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+#controllerBar .tempControls {
+  position: absolute;
+  left: 5%;
+}
+
+#controllerBar .psmControls {
+  position: absolute;
+  right: 5%;
+}
+
+#controllerBar .button {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
