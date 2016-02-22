@@ -2,6 +2,13 @@ $( document ).ready(function() {
 
   var thermostat = new Thermostat();
 
+  // $fadeText = function() {
+  // $("#currentTemperature").animate({
+  //   opacity : 0
+  // }, 150, function() {
+  //   $("#currentTemperature").text(thermostat.temperature);
+  // });
+
   $("#powersaving").click(function() {
     thermostat.powerSavingButton();
     $("#power-saving-status").text(thermostat.POWER_SAVING);
@@ -18,10 +25,9 @@ $( document ).ready(function() {
   });
 
   $("#temperature-reset").click(function() {
-    thermostat.tempReset();
-    $("#currentTemperature").text(thermostat.temperature);
+    $("#currentTemperature").fadeOut(1000, function() {
+      thermostat.tempReset();
+      $(this).text(thermostat.temperature);
+    }).fadeIn(2000);
   });
-
-
-
 });
