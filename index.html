@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-    <link href="css/thermostat.css" rel="stylesheet" type="text/css"></link>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="src/thermostatJQuery.js"></script>
+    <script type="text/javascript" src="lib/jquery.marquee/lib/jquery.marquee.js"></script>
     <script src="src/thermostat.js"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link href="css/thermostat.css" rel="stylesheet" type="text/css"></link>
+    <link type="text/css" href="lib/jquery.marquee/css/jquery.marquee.css" rel="stylesheet" media="all" />
+
     <title>Thermostat</title>
   </head>
   <body>
@@ -15,7 +19,9 @@
     </div>
 
     <div id="controllerBar">
-      <p class="currentTemp">Current Temp: <span id="current-temperature"></span> degrees celsius</p>
+      <ol id="marquee" class="marquee">
+        <li>Current Temp: <span id="current-temperature"></span> Degrees Celsius</li>
+      </ol>
       <ul class="tempControls">
         <li><button id="temperature-up"><p>+</p></button></li>
         <li><button id="temperature-down"><p>-</p></button></li>
